@@ -1,5 +1,3 @@
----
-
 # Micronet++
 
 A lightweight, modular C++ deep learning library built from scratch, designed for learning and experimenting with neural networks, tensor operations, and training algorithms.  
@@ -70,7 +68,7 @@ To run the example training executable:
 
 ## Project Structure
 
-```
+```text
 micronet++/
 ├── src/               # Source code (tensor, neural nets, training)
 ├── tests/             # Unit tests
@@ -98,9 +96,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Created by \[Your Name] - \[[arjunpathania786f@gmail.com](mailto:arjunpathania786f@gmail.com)]
 Project Link: [https://github.com/ArjunPathania/micronetplusplus](https://github.com/ArjunPathania/micronetplusplus)
 
-```
-
 ---
-
-If you want, I can help you customize this further with specific commands or add sections like roadmap, usage examples, or architecture overview!
-```
