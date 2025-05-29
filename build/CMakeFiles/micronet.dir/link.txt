@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmicronet.a CMakeFiles/micronet.dir/src/tensor.cpp.o CMakeFiles/micronet.dir/src/train_xor.cpp.o
+/usr/bin/ranlib libmicronet.a
