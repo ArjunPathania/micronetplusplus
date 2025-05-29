@@ -1,0 +1,44 @@
+# === Build artifacts ===
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# === C++ object and output files ===
+*.o
+*.obj
+*.so
+*.a
+*.lib
+*.dll
+*.dylib
+*.exe
+*.out
+
+# === Editor and OS junk ===
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+*~
+.DS_Store
+Thumbs.db
+
+# === VS Code ===
+.vscode/
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+.vscode/c_cpp_properties.json
+
+# === vcpkg ===
+.vcpkg/
+vcpkg_installed/
+installed/
+
+# === Test binaries ===
+test_tensor
+train_xor
