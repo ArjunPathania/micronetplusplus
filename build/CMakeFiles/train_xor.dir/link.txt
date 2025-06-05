@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/train_xor.dir/src/train_xor.cpp.o -o train_xor  libmicronet.a

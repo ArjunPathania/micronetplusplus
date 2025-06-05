@@ -9,7 +9,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/arjunpathania/github/micronet++/src/tensor.cpp" "CMakeFiles/micronet.dir/src/tensor.cpp.o" "gcc" "CMakeFiles/micronet.dir/src/tensor.cpp.o.d"
-  "/home/arjunpathania/github/micronet++/src/train_xor.cpp" "CMakeFiles/micronet.dir/src/train_xor.cpp.o" "gcc" "CMakeFiles/micronet.dir/src/train_xor.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

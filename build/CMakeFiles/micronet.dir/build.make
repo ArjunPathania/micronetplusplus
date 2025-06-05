@@ -86,33 +86,17 @@ CMakeFiles/micronet.dir/src/tensor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/micronet.dir/src/tensor.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arjunpathania/github/micronet++/src/tensor.cpp -o CMakeFiles/micronet.dir/src/tensor.cpp.s
 
-CMakeFiles/micronet.dir/src/train_xor.cpp.o: CMakeFiles/micronet.dir/flags.make
-CMakeFiles/micronet.dir/src/train_xor.cpp.o: /home/arjunpathania/github/micronet++/src/train_xor.cpp
-CMakeFiles/micronet.dir/src/train_xor.cpp.o: CMakeFiles/micronet.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/arjunpathania/github/micronet++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/micronet.dir/src/train_xor.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/micronet.dir/src/train_xor.cpp.o -MF CMakeFiles/micronet.dir/src/train_xor.cpp.o.d -o CMakeFiles/micronet.dir/src/train_xor.cpp.o -c /home/arjunpathania/github/micronet++/src/train_xor.cpp
-
-CMakeFiles/micronet.dir/src/train_xor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/micronet.dir/src/train_xor.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arjunpathania/github/micronet++/src/train_xor.cpp > CMakeFiles/micronet.dir/src/train_xor.cpp.i
-
-CMakeFiles/micronet.dir/src/train_xor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/micronet.dir/src/train_xor.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arjunpathania/github/micronet++/src/train_xor.cpp -o CMakeFiles/micronet.dir/src/train_xor.cpp.s
-
 # Object files for target micronet
 micronet_OBJECTS = \
-"CMakeFiles/micronet.dir/src/tensor.cpp.o" \
-"CMakeFiles/micronet.dir/src/train_xor.cpp.o"
+"CMakeFiles/micronet.dir/src/tensor.cpp.o"
 
 # External object files for target micronet
 micronet_EXTERNAL_OBJECTS =
 
 libmicronet.a: CMakeFiles/micronet.dir/src/tensor.cpp.o
-libmicronet.a: CMakeFiles/micronet.dir/src/train_xor.cpp.o
 libmicronet.a: CMakeFiles/micronet.dir/build.make
 libmicronet.a: CMakeFiles/micronet.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/arjunpathania/github/micronet++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libmicronet.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/arjunpathania/github/micronet++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libmicronet.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/micronet.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/micronet.dir/link.txt --verbose=$(VERBOSE)
 

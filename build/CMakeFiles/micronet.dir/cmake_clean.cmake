@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/micronet.dir/src/tensor.cpp.o"
   "CMakeFiles/micronet.dir/src/tensor.cpp.o.d"
-  "CMakeFiles/micronet.dir/src/train_xor.cpp.o"
-  "CMakeFiles/micronet.dir/src/train_xor.cpp.o.d"
   "libmicronet.a"
   "libmicronet.pdb"
 )

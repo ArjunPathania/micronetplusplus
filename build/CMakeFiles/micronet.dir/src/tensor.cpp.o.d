@@ -150,8 +150,4 @@ CMakeFiles/micronet.dir/src/tensor.cpp.o: \
  /usr/include/c++/11/bits/locale_facets.tcc \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
- /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/cassert \
- /usr/include/assert.h /usr/include/c++/11/cstddef \
- /usr/include/c++/11/numeric /usr/include/c++/11/bits/stl_numeric.h \
- /usr/include/c++/11/bit /usr/include/c++/11/pstl/glue_numeric_defs.h \
- /usr/include/c++/11/pstl/execution_defs.h
+ /usr/include/c++/11/bits/istream.tcc

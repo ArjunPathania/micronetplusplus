@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/arjunpathania/github/micronet++/include -isystem /home/arjunpathania/vcpkg/installed/x64-linux/include/eigen3
 
-CXX_FLAGS = -std=gnu++17
+CXX_FLAGS = -std=c++17 -Wall -Wextra -Wpedantic -Werror
 
