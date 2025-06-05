@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 name: C++ Build and Test with vcpkg
 
 on:
@@ -47,4 +44,3 @@ jobs:
 
       - name: Run tests
         run: ctest --test-dir build --output-on-failure
->>>>>>> f79c3b3 (Set up GitHub Actions for C++ project with vcpkg)
