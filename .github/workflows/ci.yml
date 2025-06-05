@@ -25,6 +25,13 @@ jobs:
       - name: Clone vcpkg fresh
         run: git clone https://github.com/microsoft/vcpkg.git
 
+      - name: Clean vcpkg git repository to avoid baseline checkout errors
+        run: |
+          cd vcpkg
+          git fetch --all
+          git reset --hard origin/master
+          git clean -fdx
+          
       - name: Bootstrap vcpkg
         run: ./vcpkg/bootstrap-vcpkg.sh
 
