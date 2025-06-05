@@ -31,10 +31,9 @@ jobs:
           key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/vcpkg.json') }}
           restore-keys: |
             ${{ runner.os }}-vcpkg-
-            
-      - name: Install vcpkg dependencies
-        run: ./vcpkg/vcpkg install
 
+      - name: Install vcpkg dependencies from manifest
+        run: ./vcpkg/vcpkg install
 
       - name: Configure CMake with vcpkg toolchain
         run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
