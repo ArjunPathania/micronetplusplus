@@ -14,30 +14,19 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Install dependencies
+      - name: Install system dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y build-essential cmake git curl unzip
 
-      - name: Remove existing vcpkg folder (if any)
-        run: rm -rf vcpkg
-
-      - name: Clone vcpkg fresh
-        run: git clone https://github.com/microsoft/vcpkg.git
-
-      - name: Reset vcpkg repo to clean state
+      - name: Setup vcpkg
         run: |
+          rm -rf ./vcpkg                      # Remove any previous clone to avoid stale state
+          git clone https://github.com/microsoft/vcpkg.git
           cd vcpkg
-          git fetch --all
-          git reset --hard origin/master
-          git clean -fdx
-
-          
-      - name: Bootstrap vcpkg
-        run: ./vcpkg/bootstrap-vcpkg.sh
-
-      - name: Clear vcpkg installed cache (optional but safer)
-        run: rm -rf vcpkg/installed
+          git fetch --unshallow || true      # Ensure full history in case of shallow clone
+          cd ..
+          ./vcpkg/bootstrap-vcpkg.sh
 
       - name: Cache vcpkg packages
         uses: actions/cache@v3
