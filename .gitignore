@@ -5,6 +5,9 @@ CMakeCache.txt
 cmake_install.cmake
 Makefile
 compile_commands.json
+CTestTestfile.cmake
+Testing/
+*.cmake
 
 # === C++ object and output files ===
 *.o
@@ -38,7 +41,19 @@ Thumbs.db
 .vcpkg/
 vcpkg_installed/
 installed/
+packages/
+buildtrees/
 
 # === Test binaries ===
 test_tensor
 train_xor
+micronet_tests
+
+# === GTest/CTest generated ===
+*.gcno
+*.gcda
+*.gcov
+
+# === CLion/JetBrains IDEs ===
+.idea/
+cmake-build-*/
