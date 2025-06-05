@@ -1,0 +1,11 @@
+{
+  "name": "micronetpp",
+  "version": "0.1.0",
+  "description": "A minimal neural network library in modern C++.",
+  "dependencies": [
+    "eigen3",
+    "gtest",
+    "fmt"
+  ],
+  "builtin-baseline": "ac1e7e32c65e0fc2a44b5f01f2d16852f3aa8161"
+}
