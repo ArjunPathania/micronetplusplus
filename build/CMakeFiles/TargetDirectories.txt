@@ -1,6 +1,6 @@
 /home/arjunpathania/github/micronet++/build/CMakeFiles/micronet.dir
 /home/arjunpathania/github/micronet++/build/CMakeFiles/train_xor.dir
-/home/arjunpathania/github/micronet++/build/CMakeFiles/test_tensor.dir
+/home/arjunpathania/github/micronet++/build/CMakeFiles/micronet_tests.dir
 /home/arjunpathania/github/micronet++/build/CMakeFiles/test.dir
 /home/arjunpathania/github/micronet++/build/CMakeFiles/edit_cache.dir
 /home/arjunpathania/github/micronet++/build/CMakeFiles/rebuild_cache.dir

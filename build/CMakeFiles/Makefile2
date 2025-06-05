@@ -65,13 +65,13 @@ CMAKE_BINARY_DIR = /home/arjunpathania/github/micronet++/build
 # The main recursive "all" target.
 all: CMakeFiles/micronet.dir/all
 all: CMakeFiles/train_xor.dir/all
-all: CMakeFiles/test_tensor.dir/all
+all: CMakeFiles/micronet_tests.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/micronet.dir/codegen
 codegen: CMakeFiles/train_xor.dir/codegen
-codegen: CMakeFiles/test_tensor.dir/codegen
+codegen: CMakeFiles/micronet_tests.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -81,7 +81,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/micronet.dir/clean
 clean: CMakeFiles/train_xor.dir/clean
-clean: CMakeFiles/test_tensor.dir/clean
+clean: CMakeFiles/micronet_tests.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -149,36 +149,36 @@ CMakeFiles/train_xor.dir/clean:
 .PHONY : CMakeFiles/train_xor.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/test_tensor.dir
+# Target rules for target CMakeFiles/micronet_tests.dir
 
 # All Build rule for target.
-CMakeFiles/test_tensor.dir/all: CMakeFiles/micronet.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tensor.dir/build.make CMakeFiles/test_tensor.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tensor.dir/build.make CMakeFiles/test_tensor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/arjunpathania/github/micronet++/build/CMakeFiles --progress-num=4,5 "Built target test_tensor"
-.PHONY : CMakeFiles/test_tensor.dir/all
+CMakeFiles/micronet_tests.dir/all: CMakeFiles/micronet.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/micronet_tests.dir/build.make CMakeFiles/micronet_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/micronet_tests.dir/build.make CMakeFiles/micronet_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/arjunpathania/github/micronet++/build/CMakeFiles --progress-num=4,5 "Built target micronet_tests"
+.PHONY : CMakeFiles/micronet_tests.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/test_tensor.dir/rule: cmake_check_build_system
+CMakeFiles/micronet_tests.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/arjunpathania/github/micronet++/build/CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_tensor.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/micronet_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/arjunpathania/github/micronet++/build/CMakeFiles 0
-.PHONY : CMakeFiles/test_tensor.dir/rule
+.PHONY : CMakeFiles/micronet_tests.dir/rule
 
 # Convenience name for target.
-test_tensor: CMakeFiles/test_tensor.dir/rule
-.PHONY : test_tensor
+micronet_tests: CMakeFiles/micronet_tests.dir/rule
+.PHONY : micronet_tests
 
 # codegen rule for target.
-CMakeFiles/test_tensor.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tensor.dir/build.make CMakeFiles/test_tensor.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/arjunpathania/github/micronet++/build/CMakeFiles --progress-num=4,5 "Finished codegen for target test_tensor"
-.PHONY : CMakeFiles/test_tensor.dir/codegen
+CMakeFiles/micronet_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/micronet_tests.dir/build.make CMakeFiles/micronet_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/arjunpathania/github/micronet++/build/CMakeFiles --progress-num=4,5 "Finished codegen for target micronet_tests"
+.PHONY : CMakeFiles/micronet_tests.dir/codegen
 
 # clean rule for target.
-CMakeFiles/test_tensor.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tensor.dir/build.make CMakeFiles/test_tensor.dir/clean
-.PHONY : CMakeFiles/test_tensor.dir/clean
+CMakeFiles/micronet_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/micronet_tests.dir/build.make CMakeFiles/micronet_tests.dir/clean
+.PHONY : CMakeFiles/micronet_tests.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

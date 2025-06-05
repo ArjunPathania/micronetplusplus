@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/arjunpathania/vcpkg/installed/x64-linux/include/eigen3 -I/home/arjunpathania/github/micronet++/include
+CXX_INCLUDES = -I/home/arjunpathania/github/micronet++/include
 
 CXX_FLAGS = -std=gnu++17
 

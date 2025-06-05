@@ -153,17 +153,17 @@ train_xor/fast:
 .PHONY : train_xor/fast
 
 #=============================================================================
-# Target rules for targets named test_tensor
+# Target rules for targets named micronet_tests
 
 # Build rule for target.
-test_tensor: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_tensor
-.PHONY : test_tensor
+micronet_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 micronet_tests
+.PHONY : micronet_tests
 
 # fast build rule for target.
-test_tensor/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tensor.dir/build.make CMakeFiles/test_tensor.dir/build
-.PHONY : test_tensor/fast
+micronet_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/micronet_tests.dir/build.make CMakeFiles/micronet_tests.dir/build
+.PHONY : micronet_tests/fast
 
 src/tensor.o: src/tensor.cpp.o
 .PHONY : src/tensor.o
@@ -221,7 +221,7 @@ tests/test_tensor.o: tests/test_tensor.cpp.o
 
 # target to build an object file
 tests/test_tensor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tensor.dir/build.make CMakeFiles/test_tensor.dir/tests/test_tensor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/micronet_tests.dir/build.make CMakeFiles/micronet_tests.dir/tests/test_tensor.cpp.o
 .PHONY : tests/test_tensor.cpp.o
 
 tests/test_tensor.i: tests/test_tensor.cpp.i
@@ -229,7 +229,7 @@ tests/test_tensor.i: tests/test_tensor.cpp.i
 
 # target to preprocess a source file
 tests/test_tensor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tensor.dir/build.make CMakeFiles/test_tensor.dir/tests/test_tensor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/micronet_tests.dir/build.make CMakeFiles/micronet_tests.dir/tests/test_tensor.cpp.i
 .PHONY : tests/test_tensor.cpp.i
 
 tests/test_tensor.s: tests/test_tensor.cpp.s
@@ -237,7 +237,7 @@ tests/test_tensor.s: tests/test_tensor.cpp.s
 
 # target to generate assembly for a file
 tests/test_tensor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tensor.dir/build.make CMakeFiles/test_tensor.dir/tests/test_tensor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/micronet_tests.dir/build.make CMakeFiles/micronet_tests.dir/tests/test_tensor.cpp.s
 .PHONY : tests/test_tensor.cpp.s
 
 # Help Target
@@ -250,7 +250,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... micronet"
-	@echo "... test_tensor"
+	@echo "... micronet_tests"
 	@echo "... train_xor"
 	@echo "... src/tensor.o"
 	@echo "... src/tensor.i"

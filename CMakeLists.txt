@@ -11,12 +11,13 @@ if(DEFINED ENV{VCPKG_ROOT})
         CACHE STRING "Vcpkg toolchain file")
 endif()
 
-# Find Eigen from vcpkg
+# Find dependencies via Vcpkg
 find_package(Eigen3 CONFIG REQUIRED)
+find_package(GTest CONFIG REQUIRED)
+find_package(fmt CONFIG REQUIRED)
 
-# Add include dirs
+# Add include directories
 include_directories(
-    ${EIGEN3_INCLUDE_DIRS} # Usually redundant, but helps with intellisense sometimes
     ${PROJECT_SOURCE_DIR}/include
 )
 
@@ -24,21 +25,42 @@ include_directories(
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 file(GLOB_RECURSE HEADERS "include/**/*.hpp")
 
-# Core static library
+# Core library
 add_library(micronet STATIC ${SOURCES} ${HEADERS})
 target_link_libraries(micronet PRIVATE Eigen3::Eigen)
 
+# =======================
 # Executable: XOR training
+# =======================
 add_executable(train_xor src/train_xor.cpp)
 target_link_libraries(train_xor PRIVATE micronet)
 
-# Executable: Tensor test
-add_executable(test_tensor tests/test_tensor.cpp)
-target_link_libraries(test_tensor PRIVATE micronet)
-
-# Unit testing support
+# =======================
+# Unit Testing Setup
+# =======================
 enable_testing()
-add_test(NAME TensorTest COMMAND test_tensor)
 
-# Messages for clarity
-message(STATUS "Project MicroNetPP configured with Eigen3 via vcpkg.")
+# Test executable using multiple test files
+file(GLOB_RECURSE TEST_SOURCES
+    "tests/test_*.cpp"
+)
+
+add_executable(micronet_tests ${TEST_SOURCES})
+target_link_libraries(micronet_tests
+    PRIVATE
+        micronet
+        GTest::gtest
+        GTest::gtest_main
+        fmt::fmt
+)
+
+include(GoogleTest)
+gtest_discover_tests(micronet_tests)
+
+# Add basic test check
+add_test(NAME MicroNetUnitTests COMMAND micronet_tests)
+
+# =======================
+# Debug info
+# =======================
+message(STATUS "Project MicroNetPP configured with Eigen3, GTest, and fmt via vcpkg.")
