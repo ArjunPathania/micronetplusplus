@@ -38,6 +38,10 @@ jobs:
       - name: Install dependencies via vcpkg
         run: ./vcpkg/vcpkg install
 
+      - name: Clean build directory
+        run: |
+            rm -rf build
+
       - name: Configure CMake with vcpkg toolchain
         run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
 
