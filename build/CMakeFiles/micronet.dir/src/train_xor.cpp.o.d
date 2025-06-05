@@ -1,5 +1,5 @@
 CMakeFiles/micronet.dir/src/train_xor.cpp.o: \
- /home/arjunpathania/micronet++/src/train_xor.cpp \
+ /home/arjunpathania/github/micronet++/src/train_xor.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

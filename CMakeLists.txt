@@ -1,48 +1,44 @@
 cmake_minimum_required(VERSION 3.15)
-project(MicroNetPP LANGUAGES CXX)
+project(MicroNetPP VERSION 0.1.0 LANGUAGES CXX)
 
-
+# Enforce modern C++
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-
+# Vcpkg toolchain setup
 if(DEFINED ENV{VCPKG_ROOT})
     set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
         CACHE STRING "Vcpkg toolchain file")
 endif()
 
+# Find Eigen from vcpkg
+find_package(Eigen3 CONFIG REQUIRED)
 
-find_package(Eigen3 CONFIG QUIET)
-if(NOT Eigen3_FOUND)
-    message(STATUS "Eigen3 not found via vcpkg. Using extern/eigen")
-    include_directories(extern/eigen)
-else()
-    message(STATUS "Eigen3 found via vcpkg")
-endif()
+# Add include dirs
+include_directories(
+    ${EIGEN3_INCLUDE_DIRS} # Usually redundant, but helps with intellisense sometimes
+    ${PROJECT_SOURCE_DIR}/include
+)
 
-
-include_directories(include)
-
-
+# Gather all sources and headers
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 file(GLOB_RECURSE HEADERS "include/**/*.hpp")
 
-# Static library from source
+# Core static library
 add_library(micronet STATIC ${SOURCES} ${HEADERS})
+target_link_libraries(micronet PRIVATE Eigen3::Eigen)
 
-# Link Eigen if found via vcpkg
-if(Eigen3_FOUND)
-    target_link_libraries(micronet PRIVATE Eigen3::Eigen)
-endif()
-
-# Add executable: train_xor
+# Executable: XOR training
 add_executable(train_xor src/train_xor.cpp)
 target_link_libraries(train_xor PRIVATE micronet)
 
-# Add executable: test_tensor (unit tests)
+# Executable: Tensor test
 add_executable(test_tensor tests/test_tensor.cpp)
 target_link_libraries(test_tensor PRIVATE micronet)
 
-# Enable and register test
+# Unit testing support
 enable_testing()
 add_test(NAME TensorTest COMMAND test_tensor)
+
+# Messages for clarity
+message(STATUS "Project MicroNetPP configured with Eigen3 via vcpkg.")
