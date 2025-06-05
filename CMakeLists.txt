@@ -1,49 +1,59 @@
 cmake_minimum_required(VERSION 3.15)
+cmake_policy(SET CMP0077 NEW)
+
 project(MicroNetPP VERSION 0.1.0 LANGUAGES CXX)
 
-# Enforce modern C++
+# ================================
+# Modern C++ Setup
+# ================================
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)  # Enforce standard-compliant code
 
-# Vcpkg toolchain setup
+# ================================
+# Vcpkg Toolchain Setup
+# ================================
 if(DEFINED ENV{VCPKG_ROOT})
     set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
         CACHE STRING "Vcpkg toolchain file")
 endif()
 
-# Find dependencies via Vcpkg
+# ================================
+# Dependencies via Vcpkg
+# ================================
 find_package(Eigen3 CONFIG REQUIRED)
 find_package(GTest CONFIG REQUIRED)
 find_package(fmt CONFIG REQUIRED)
 
-# Add include directories
-include_directories(
-    ${PROJECT_SOURCE_DIR}/include
-)
-
-# Gather all sources and headers
+# ================================
+# Core Library: micronet
+# ================================
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 file(GLOB_RECURSE HEADERS "include/**/*.hpp")
 
-# Core library
 add_library(micronet STATIC ${SOURCES} ${HEADERS})
 target_link_libraries(micronet PRIVATE Eigen3::Eigen)
 
-# =======================
-# Executable: XOR training
-# =======================
-add_executable(train_xor src/train_xor.cpp)
-target_link_libraries(train_xor PRIVATE micronet)
+target_include_directories(micronet
+    PUBLIC
+        ${PROJECT_SOURCE_DIR}/include
+)
 
-# =======================
-# Unit Testing Setup
-# =======================
+target_compile_features(micronet PUBLIC cxx_std_17)
+
+target_compile_options(micronet PRIVATE
+    -Wall -Wextra -Wpedantic -Werror
+)
+
+# ================================
+# Executable: XOR Trainer
+# ================================
+
+# Unit Testing Setup with GTest
+include(CTest)
 enable_testing()
 
-# Test executable using multiple test files
-file(GLOB_RECURSE TEST_SOURCES
-    "tests/test_*.cpp"
-)
+file(GLOB_RECURSE TEST_SOURCES "tests/test_*.cpp")
 
 add_executable(micronet_tests ${TEST_SOURCES})
 target_link_libraries(micronet_tests
@@ -55,12 +65,12 @@ target_link_libraries(micronet_tests
 )
 
 include(GoogleTest)
-gtest_discover_tests(micronet_tests)
+gtest_discover_tests(micronet_tests)  # Call AFTER target_link_libraries
 
-# Add basic test check
-add_test(NAME MicroNetUnitTests COMMAND micronet_tests)
-
-# =======================
-# Debug info
-# =======================
-message(STATUS "Project MicroNetPP configured with Eigen3, GTest, and fmt via vcpkg.")
+# ================================
+# Debug Info
+# ================================
+message(STATUS "MicroNetPP configured with:")
+message(STATUS "  - C++17 and extensions OFF")
+message(STATUS "  - Eigen3, GTest, and fmt via Vcpkg")
+message(STATUS "  - Tests discovered using gtest_discover_tests")

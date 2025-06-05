@@ -1,44 +1,24 @@
-// tensor.hpp
-#ifndef TENSOR_HPP
-#define TENSOR_HPP
+#pragma once
 
 #include <vector>
 #include <iostream>
-#include <cassert>
-#include <cstddef>
+#include <stdexcept>
+
+namespace micronet {
 
 class Tensor {
-private:
-    std::vector<size_t> shape;
-    std::vector<float> data;
-
-    // Convert multi-dimensional index to flat index
-    size_t flatten_index(const std::vector<size_t>& indices) const;
-
 public:
-    // Constructors
-    Tensor() = default;
-    Tensor(const std::vector<size_t>& shape_, float init_val = 0.0f);
+    Tensor(size_t rows, size_t cols);
 
-    // Accessors
-    const std::vector<size_t>& get_shape() const { return shape; }
-    size_t size() const { return data.size(); }
-    const std::vector<float>& get_data() const { return data; }
+    void set(size_t row, size_t col, float value);
+    float get(size_t row, size_t col) const;
 
-    // Flat indexing operator
-    float& operator[](size_t idx) {
-        assert(idx < data.size());
-        return data[idx];
-    }
+    size_t rows() const { return _rows; }
+    size_t cols() const { return _cols; }
 
-    const float& operator[](size_t idx) const {
-        assert(idx < data.size());
-        return data[idx];
-    }
-
-    // Print utilities
-    void print_shape() const;
-    void print_data() const;
+private:
+    size_t _rows, _cols;
+    std::vector<float> _data;
 };
 
-#endif // TENSOR_HPP
+}  // namespace micronet
