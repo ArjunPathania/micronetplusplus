@@ -31,3 +31,7 @@ echo "🛠️ Building the project..."
 cmake --build .
 
 echo "✅ Build complete!"
+
+echo "🧪 Running tests after build..."
+ctest --verbose
+
