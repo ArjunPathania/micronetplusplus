@@ -9,6 +9,14 @@ if [ -z "$VCPKG_ROOT" ]; then
   echo "VCPKG_ROOT not set, using default: $VCPKG_ROOT"
 fi
 
+# Ensure vcpkg baseline is available (Git fetch fix)
+echo "🔄 Ensuring Vcpkg baseline is up to date..."
+cd "$VCPKG_ROOT"
+git fetch origin
+git checkout master  # or the branch you're using
+git pull
+cd -
+
 # Clean and rebuild
 echo "🔄 Cleaning previous build..."
 rm -rf build
