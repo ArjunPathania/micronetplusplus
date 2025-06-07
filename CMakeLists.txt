@@ -8,7 +8,7 @@ project(MicroNetPP VERSION 0.1.0 LANGUAGES CXX)
 # ================================
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)  # Enforce standard-compliant code
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 # ================================
 # Vcpkg Toolchain Setup
@@ -46,10 +46,8 @@ target_compile_options(micronet PRIVATE
 )
 
 # ================================
-# Executable: XOR Trainer
+# Executable: Unit Tests
 # ================================
-
-# Unit Testing Setup with GTest
 include(CTest)
 enable_testing()
 
@@ -65,7 +63,9 @@ target_link_libraries(micronet_tests
 )
 
 include(GoogleTest)
-gtest_discover_tests(micronet_tests)  # Call AFTER target_link_libraries
+
+# ✅ Important fix: ensure test discovery works reliably
+gtest_discover_tests(micronet_tests DISCOVERY_TIMEOUT 30)
 
 # ================================
 # Debug Info

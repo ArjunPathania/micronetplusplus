@@ -58,3 +58,6 @@ micronet_tests
 # === CLion/JetBrains IDEs ===
 .idea/
 cmake-build-*/
+
+# .gitignore
+build/
